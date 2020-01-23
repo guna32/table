@@ -4,15 +4,15 @@ export const countryDetails = {
     {
       country: "India",
       capital: "New Delhi",
-      monetaryUnit: "Rupee",
-      literacyRate: "62.8",
+      "monetary unit": "Rupee",
+      "literacy rate": "62.8",
       government: "Federal republic"
     },
     {
       country: "Finland",
       capital: "Helsinki",
-      monetaryUnit: "Euro",
-      literacyRate: "100",
+      "monetary unit": "Euro",
+      "literacy rate": "100",
       government: "Republic"
     }
   ]
