@@ -1,4 +1,5 @@
 export const countryDetails = {
+  title: "Countries of the World",
   data: [
     {
       country: "India",
