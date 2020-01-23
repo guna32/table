@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Table from "./components/data-table";
+import { countryDetails } from "./table-data";
 
 function App() {
+  const tableData = countryDetails;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{ background: "gray", width: "30%" }}>
+        <h1>Insert Form</h1>
+      </div>
+      <div style={{ background: "lightgray", width: "70%" }}>
+        <h1>Data table</h1>
+        <Table data={tableData.data} title={tableData.title}></Table>
+      </div>
     </div>
   );
 }
