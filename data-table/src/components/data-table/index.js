@@ -14,22 +14,24 @@ const RawTable = ({ data }) => {
   const tHeaders = Object.keys(data[0]);
   return (
     <table>
-      <tr>
-        {tHeaders.map(th => (
-          <td>
-            <TableCell cellType="header">{th}</TableCell>
-          </td>
-        ))}
-      </tr>
-      {data.map(tr => (
-        <tr key={JSON.stringify(tr)}>
+      <tbody>
+        <tr>
           {tHeaders.map(th => (
-            <td>
-              <TableCell key={JSON.stringify(th)}>{tr[th]}</TableCell>
+            <td key={JSON.stringify(th)}>
+              <TableCell cellType="header">{th}</TableCell>
             </td>
           ))}
         </tr>
-      ))}
+        {data.map(tr => (
+          <tr key={JSON.stringify(tr)}>
+            {tHeaders.map(th => (
+              <td key={JSON.stringify(th)}>
+                <TableCell>{tr[th]}</TableCell>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 };
