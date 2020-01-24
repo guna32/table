@@ -41,6 +41,7 @@
     "@storybook/addons": "^5.3.8",
     "@storybook/preset-create-react-app": "^1.5.2",
     "@storybook/react": "^5.3.8",
+    "jest-styled-components": "^7.0.0",
     "react-test-renderer": "^16.12.0"
   }
 }
