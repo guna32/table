@@ -45,22 +45,7 @@ exports[`Storyshots Button Text 1`] = `
 </button>
 `;
 
-exports[`Storyshots TableCell Header Cell 1`] = `
-.c0 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: capitalize;
-  padding: 10px;
-}
-
-<div
-  className="c0"
->
-  header cell
-</div>
-`;
-
-exports[`Storyshots TableCell Normal Cell 1`] = `
+exports[`Storyshots TableCell Simple Cell 1`] = `
 .c0 {
   font-size: 1rem;
   font-weight: 200;
@@ -70,7 +55,7 @@ exports[`Storyshots TableCell Normal Cell 1`] = `
 <div
   className="c0"
 >
-  ordinary cell
+  render anything
 </div>
 `;
 
