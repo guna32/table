@@ -10,7 +10,7 @@ function App() {
       <div style={{ background: "gray", width: "30%" }}>
         <h1>Insert Form</h1>
       </div>
-      <div style={{ background: "lightgray", width: "70%" }}>
+      <div style={{ background: "", width: "70%" }}>
         <h1>Data table</h1>
         <Table data={tableData.data} title={tableData.title}></Table>
       </div>

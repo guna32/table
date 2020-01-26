@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import { create, act } from "react-test-renderer";
 import { TableCell } from "./style";
+import { sortObject } from "../../utils/commonUtils";
 
-describe("Table cell component", () => {
-  test("cell have different styles for different cell types", () => {
-    let component;
-    act(() => {
-      component = create(<TableCell cellType="header">cell</TableCell>);
-    });
-    const instance = component.root;
-    const tableCell = instance.findByType("div");
-    console.log("table cell", tableCell.props);
-    debugger;
-    // expect(tableCell.props.children).toBe("PROCEED TO CHECKOUT");
+describe("test object sorting", () => {
+  test("test sort functionalities", () => {
+    const numberSet = [{ value: 2 }, { value: 1 }];
+    const stringSet = [{ value: "b" }, { value: "a" }];
+    expect(sortObject("ASC", "value", numberSet)).toStrictEqual([
+      { value: 1 },
+      { value: 2 }
+    ]);
+    expect(sortObject("DSC", "value", numberSet)).toStrictEqual([
+      { value: 2 },
+      { value: 1 }
+    ]);
+    expect(sortObject("ASC", "value", stringSet)).toStrictEqual([
+      { value: "a" },
+      { value: "b" }
+    ]);
   });
 });

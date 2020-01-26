@@ -48,7 +48,7 @@ exports[`Storyshots Button Text 1`] = `
 exports[`Storyshots TableCell Simple Cell 1`] = `
 .c0 {
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 300;
   padding: 10px;
 }
 
