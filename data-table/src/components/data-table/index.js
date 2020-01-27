@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { TableCell, Title, TW, TableHeaderWrap } from "./style";
-import { sortObject } from "../../utils/commonUtils";
-
+import { TableCell, Title, TW, TableHeaderWrap, TableUtilWrap } from "./style";
+import { sortObject, searchArray } from "../../utils/commonUtils";
+import SearchBox from "../searchBox";
 const Table = ({ data, title }) => {
+  const [tableData, setTableData] = useState(data);
+  const searchTable = e => {
+    setTableData(searchArray(e.target.value, data));
+  };
+
   return (
     <TW>
-      <Title>{title}</Title>
-      <RawTable data={data}></RawTable>
+      <TableUtilWrap>
+        <Title>{title}</Title>
+        <SearchBox searchCallback={e => searchTable(e)}></SearchBox>
+      </TableUtilWrap>
+      <RawTable data={tableData}></RawTable>
     </TW>
   );
 };
@@ -14,15 +22,21 @@ const Table = ({ data, title }) => {
 const RawTable = ({ data }) => {
   const [tableData, setTableData] = useState(data);
   const [count, setCount] = useState(0);
-  const tHeaders = Object.keys(tableData[0]); //fetch headers
+  const tHeaders = tableData.length > 0 ? Object.keys(tableData[0]) : []; //fetch headers
 
   const handleSort = key => {
     setCount(count + 1);
     setTableData(sortObject("ASC", key, tableData));
   };
-  //update table on sort
-  useEffect(() => {}, [count]);
+  //update table on sort,data change
+  useEffect(() => {
+    setTableData(data);
+  }, [count, data.length, data]);
 
+  //when no data
+  if (tableData.length <= 0) {
+    return <p>No record found</p>;
+  }
   return (
     <table>
       <tbody>

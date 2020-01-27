@@ -21,3 +21,7 @@ export const TableHeaderWrap = styled.div`
   display: flex;
   align-items: center;
 `;
+export const TableUtilWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
