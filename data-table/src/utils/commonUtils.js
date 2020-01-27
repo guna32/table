@@ -17,7 +17,7 @@ export const searchArray = (element, traget) => {
   traget.forEach(object => {
     let searchItem =
       typeof element === "string" ? element.toUpperCase() : element;
-    let searchTarget = JSON.stringify(object).toUpperCase();
+    let searchTarget = JSON.stringify(Object.values(object)).toUpperCase();
     if (searchTarget.includes(searchItem)) {
       searchResult.push(object);
     }

@@ -45,7 +45,7 @@ exports[`Storyshots Button Text 1`] = `
 </button>
 `;
 
-exports[`Storyshots SearchBox Search Box 1`] = `
+exports[`Storyshots SearchBox Search Bar 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
