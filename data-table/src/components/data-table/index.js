@@ -4,15 +4,14 @@ import { sortObject, searchArray } from "../../utils/commonUtils";
 import SearchBox from "../searchBox";
 const Table = ({ data, title }) => {
   const [tableData, setTableData] = useState(data);
-  const searchTable = e => {
-    setTableData(searchArray(e.target.value, data));
-  };
 
   return (
     <TW>
       <TableUtilWrap>
         <Title>{title}</Title>
-        <SearchBox searchCallback={e => searchTable(e)}></SearchBox>
+        <SearchBox
+          searchCallback={e => setTableData(searchArray(e.target.value, data))}
+        ></SearchBox>
       </TableUtilWrap>
       <RawTable data={tableData}></RawTable>
     </TW>
