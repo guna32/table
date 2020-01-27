@@ -45,6 +45,39 @@ exports[`Storyshots Button Text 1`] = `
 </button>
 `;
 
+exports[`Storyshots SearchBox Search Box 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 10rem;
+}
+
+<div
+  className="c0"
+>
+  <input
+    id="myInput"
+    onChange={[Function]}
+    placeholder="Search for items.."
+    style={
+      Object {
+        "height": "35%",
+        "width": "100%",
+      }
+    }
+    title="Type in a name"
+    type="search"
+  />
+</div>
+`;
+
 exports[`Storyshots TableCell Simple Cell 1`] = `
 .c0 {
   font-size: 1rem;
