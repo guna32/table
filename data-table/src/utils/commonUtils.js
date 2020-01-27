@@ -10,3 +10,17 @@ export const sortObject = (order, key, data) => {
   });
   return data;
 };
+
+export const searchArray = (element, traget) => {
+  let searchResult = [];
+  //target should be an array in order to conduct search on it.
+  traget.forEach(object => {
+    let searchItem =
+      typeof element === "string" ? element.toUpperCase() : element;
+    let searchTarget = JSON.stringify(object).toUpperCase();
+    if (searchTarget.includes(searchItem)) {
+      searchResult.push(object);
+    }
+  });
+  return searchResult;
+};
