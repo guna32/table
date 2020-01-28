@@ -8,9 +8,13 @@ export default {
   component: TableCell
 };
 const cellType = { Header: "header", Ordinary: "ordinary" };
+const theme = { blue: "#DEEBF7", white: "", gray: "lightgray" };
 
 export const simpleCell = () => (
-  <TableCell cellType={select("Cell Type", cellType, "ordinary")}>
+  <TableCell
+    cellType={select("Cell Type", cellType, "ordinary")}
+    theme={select("Theme", theme, "white")}
+  >
     render anything
   </TableCell>
 );
