@@ -15,10 +15,11 @@ code {
 table,
 th,
 td {
-  border: 2px solid rgb(234, 231, 231);
+  border: 1px solid rgb(234, 231, 231);
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
+  border: 0;
 }

@@ -6,6 +6,7 @@ export const TableCell = styled.div`
       ? { fontSize: "1.2rem", fontWeight: "600", textTransform: "capitalize" }
       : { fontSize: "1rem", fontWeight: "300" }}
   padding:10px;
+  background: ${props => (props.theme ? props.theme : "")};
 `;
 export const Title = styled.div`
   padding: 1rem 0;
@@ -20,6 +21,8 @@ export const TW = styled.div`
 export const TableHeaderWrap = styled.div`
   display: flex;
   align-items: center;
+  background: #5e9cd3;
+  color: white;
 `;
 export const TableUtilWrap = styled.div`
   display: flex;

@@ -37,7 +37,7 @@ const RawTable = ({ data }) => {
     return <p>No record found</p>;
   }
   return (
-    <table>
+    <table cellspacing="0" cellpadding="0">
       <tbody>
         <tr>
           {tHeaders.map(th => (
@@ -54,11 +54,13 @@ const RawTable = ({ data }) => {
             </td>
           ))}
         </tr>
-        {tableData.map(tr => (
+        {tableData.map((tr, i) => (
           <tr key={JSON.stringify(tr)}>
             {tHeaders.map(th => (
               <td key={JSON.stringify(th)}>
-                <TableCell>{tr[th]}</TableCell>
+                <TableCell theme={i % 2 === 0 ? "#DEEBF7" : ""}>
+                  {tr[th]}
+                </TableCell>
               </td>
             ))}
           </tr>
