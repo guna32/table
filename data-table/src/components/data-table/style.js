@@ -15,7 +15,10 @@ export const Title = styled.div`
 `;
 
 export const TW = styled.div`
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
+  border: 1px solid lightgray;
+  margin: 0 1rem;
+  // box-shadow: 10px 10px 10px -5px lightgrey;
 `;
 
 export const TableHeaderWrap = styled.div`
@@ -23,8 +26,17 @@ export const TableHeaderWrap = styled.div`
   align-items: center;
   background: #5e9cd3;
   color: white;
+  justify-content: space-around;
 `;
 export const TableUtilWrap = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+export const RTW = styled.div`
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: gray;
 `;

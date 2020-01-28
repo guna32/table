@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { TableCell, Title, TW, TableHeaderWrap, TableUtilWrap } from "./style";
+import {
+  TableCell,
+  Title,
+  TW,
+  TableHeaderWrap,
+  TableUtilWrap,
+  RTW
+} from "./style";
 import { sortObject, searchArray } from "../../utils/commonUtils";
 import SearchBox from "../searchBox";
+import SortComponent from "../sortComponent";
+
 const Table = ({ data, title }) => {
   const [tableData, setTableData] = useState(data);
 
@@ -25,17 +34,23 @@ const RawTable = ({ data }) => {
 
   const handleSort = key => {
     setCount(count + 1);
-    setTableData(sortObject("ASC", key, tableData));
+    let order = count % 2 === 0 ? "ASC" : "DSC";
+    setTableData(sortObject(order, key, tableData));
   };
   //update table on sort,data change
   useEffect(() => {
     setTableData(data);
-  }, [count, data.length, data]);
+  }, [data.length, data]);
 
   //when no data
   if (tableData.length <= 0) {
-    return <p>No record found</p>;
+    return (
+      <RTW>
+        <p>No record found</p>
+      </RTW>
+    );
   }
+
   return (
     <table cellspacing="0" cellpadding="0">
       <tbody>
@@ -44,12 +59,7 @@ const RawTable = ({ data }) => {
             <td key={JSON.stringify(th)}>
               <TableHeaderWrap>
                 <TableCell cellType="header">{th}</TableCell>
-                <button
-                  style={{ height: "60%" }}
-                  onClick={() => handleSort(th)}
-                >
-                  sort
-                </button>
+                <SortComponent onClick={() => handleSort(th)} />
               </TableHeaderWrap>
             </td>
           ))}
