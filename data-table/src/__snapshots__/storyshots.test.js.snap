@@ -68,7 +68,7 @@ exports[`Storyshots RawTable Empty Table 1`] = `
   className="c0"
 >
   <p>
-    No record found
+    No records found
   </p>
 </div>
 `;

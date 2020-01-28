@@ -23,7 +23,7 @@ const RawTable = ({ data }) => {
   if (tableData.length <= 0) {
     return (
       <RTW>
-        <p>No record found</p>
+        <p>No records found</p>
       </RTW>
     );
   }
