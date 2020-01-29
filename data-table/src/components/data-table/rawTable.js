@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sortObject } from "../../utils/commonUtils";
 import SortComponent from "../sortComponent";
 
-import { TableCell, TableHeaderWrap, RTW } from "./style";
+import { TableCell, TableHeaderWrap, RTW, RawTableWrap } from "./style";
 
 const RawTable = ({ data }) => {
   const [tableData, setTableData] = useState(data);
@@ -29,31 +29,33 @@ const RawTable = ({ data }) => {
   }
 
   return (
-    <table cellspacing="0" cellpadding="0">
-      <tbody>
-        <tr>
-          {tHeaders.map(th => (
-            <td key={JSON.stringify(th)}>
-              <TableHeaderWrap>
-                <TableCell cellType="header">{th}</TableCell>
-                <SortComponent onClick={() => handleSort(th)} />
-              </TableHeaderWrap>
-            </td>
-          ))}
-        </tr>
-        {tableData.map((tr, i) => (
-          <tr key={JSON.stringify(tr)}>
+    <RawTableWrap>
+      <table cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
             {tHeaders.map(th => (
               <td key={JSON.stringify(th)}>
-                <TableCell theme={i % 2 === 0 ? "#DEEBF7" : ""}>
-                  {tr[th]}
-                </TableCell>
+                <TableHeaderWrap>
+                  <TableCell cellType="header">{th}</TableCell>
+                  <SortComponent onClick={() => handleSort(th)} />
+                </TableHeaderWrap>
               </td>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+          {tableData.map((tr, i) => (
+            <tr key={JSON.stringify(tr)}>
+              {tHeaders.map(th => (
+                <td key={JSON.stringify(th)}>
+                  <TableCell theme={i % 2 === 0 ? "#DEEBF7" : ""}>
+                    {tr[th]}
+                  </TableCell>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </RawTableWrap>
   );
 };
 export default RawTable;

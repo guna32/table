@@ -19,7 +19,7 @@ export const TW = styled.div`
   padding: 0 1rem 1rem 1rem;
   border: 1px solid lightgray;
   margin: 0 1rem;
-  overflow: auto;
+  // overflow: auto;
   // box-shadow: 10px 10px 10px -5px lightgrey;
 `;
 
@@ -42,4 +42,9 @@ export const RTW = styled.div`
   justify-content: center;
   font-size: 2em;
   color: gray;
+`;
+export const RawTableWrap = styled.div`
+  width: 100%;
+  overflow: auto;
+  min-height: 50vh;
 `;
