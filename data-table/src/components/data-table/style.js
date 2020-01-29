@@ -7,6 +7,7 @@ export const TableCell = styled.div`
       : { fontSize: "1rem", fontWeight: "300" }}
   padding:10px;
   background: ${props => (props.theme ? props.theme : "")};
+  text-align: left;
 `;
 export const Title = styled.div`
   padding: 1rem 0;
@@ -18,6 +19,7 @@ export const TW = styled.div`
   padding: 0 1rem 1rem 1rem;
   border: 1px solid lightgray;
   margin: 0 1rem;
+  overflow: auto;
   // box-shadow: 10px 10px 10px -5px lightgrey;
 `;
 
@@ -26,7 +28,8 @@ export const TableHeaderWrap = styled.div`
   align-items: center;
   background: #5e9cd3;
   color: white;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 10px 10px;
 `;
 export const TableUtilWrap = styled.div`
   display: flex;
