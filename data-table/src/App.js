@@ -8,7 +8,8 @@ function App() {
   const tableData = countryDetails;
   return (
     <div className="App">
-      <CanvasLabs style={{ width: "15%" }}></CanvasLabs>
+      <div style={{ background: "#5e9cd3", width: "15%" }}></div>
+      {/* <CanvasLabs style={{ width: "15%" }}></CanvasLabs> */}
       <div style={{ background: "", width: "100%" }}>
         <h1>Data table</h1>
         <Table data={tableData.data} title={tableData.title}></Table>
